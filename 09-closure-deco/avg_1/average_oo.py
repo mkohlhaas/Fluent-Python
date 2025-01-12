@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 >>> avg = Averager()
 >>> avg(10)
@@ -12,9 +14,9 @@
 
 class Averager:
     def __init__(self):
-        self.series = []
+        self.series: list[float] = []
 
-    def __call__(self, new_value):
+    def __call__(self, new_value: float):
         self.series.append(new_value)
         total = sum(self.series)
         return total / len(self.series)

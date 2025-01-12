@@ -1,5 +1,3 @@
-# clockdeco_param.py
-
 """
 >>> snooze(.1)  # doctest: +ELLIPSIS
 [0.101...s] snooze(0.1) -> None
@@ -9,32 +7,33 @@ sleep: 0.20...
 sleep(0.2) dt=0.201s
 """
 
-# tag::CLOCKDECO_PARAM[]
 import time
 
-DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
+DEFAULT_FMT = "[{elapsed:0.8f}s] {name}({args}) -> {result}"
 
-def clock(fmt=DEFAULT_FMT):  # <1>
-    def decorate(func):      # <2>
-        def clocked(*_args): # <3>
+
+def clock(fmt=DEFAULT_FMT):
+    def decorate(func):
+        def clocked(*_args):
             t0 = time.perf_counter()
-            _result = func(*_args)  # <4>
+            _result = func(*_args)
             elapsed = time.perf_counter() - t0
             name = func.__name__
-            args = ', '.join(repr(arg) for arg in _args)  # <5>
-            result = repr(_result)  # <6>
-            print(fmt.format(**locals()))  # <7>
-            return _result  # <8>
-        return clocked  # <9>
-    return decorate  # <10>
+            args = ", ".join(repr(arg) for arg in _args)
+            result = repr(_result)
+            print(fmt.format(**locals()))
+            return _result
 
-if __name__ == '__main__':
+        return clocked
 
-    @clock()  # <11>
-    def snooze(seconds):
-        time.sleep(seconds)
+    return decorate
 
+
+@clock()
+def snooze(seconds):
+    time.sleep(seconds)
+
+
+if __name__ == "__main__":
     for i in range(3):
-        snooze(.123)
-
-# end::CLOCKDECO_PARAM[]
+        snooze(0.123)

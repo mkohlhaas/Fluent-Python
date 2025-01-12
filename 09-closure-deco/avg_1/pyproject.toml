@@ -1,0 +1,10 @@
+[project]
+name = "avg-1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.basedpyright]
+pythonVersion = "3.13"
