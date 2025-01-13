@@ -1,9 +1,10 @@
-from typing import Protocol                    # <1>
+from typing import Protocol
+
 
 class GooseLike(Protocol):
-    def honk(self, times: int) -> None: ...    # <2>
+    def honk(self, times: int) -> None: ...
     def swim(self) -> None: ...
 
 
-def alert(waterfowl: GooseLike) -> None:       # <3>
+def alert(waterfowl: GooseLike) -> None:
     waterfowl.honk(2)

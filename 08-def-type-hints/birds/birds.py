@@ -1,15 +1,19 @@
 class Bird:
     pass
 
-class Duck(Bird):  # <1>
+
+class Duck(Bird):
     def quack(self):
-        print('Quack!')
+        print("Quack!")
 
-def alert(birdie):  # <2>
+
+def alert(birdie):
     birdie.quack()
 
-def alert_duck(birdie: Duck) -> None:  # <3>
+
+def alert_duck(birdie: Duck) -> None:
     birdie.quack()
 
-def alert_bird(birdie: Bird) -> None:  # <4>
+
+def alert_bird(birdie: Bird) -> None:
     birdie.quack()

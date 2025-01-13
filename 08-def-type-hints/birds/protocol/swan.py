@@ -1,13 +1,14 @@
-from lake import alert                         # <1>
+from lake import alert
 
-class Swan:                                    # <2>
-    def honk(self, repetitions: int) -> None:  # <3>
-        print('Honk! ' * repetitions)
 
-    def swim(self) -> None:                    # <4>
+class Swan:
+    def honk(self, repetitions: int) -> None:
+        print("Honk! " * repetitions)
+
+    def swim(self) -> None:
         pass
 
 
 bella = Swan()
 
-alert(bella)                                   # <5>
+alert(bella)

@@ -4,8 +4,9 @@ from typing import Optional
 
 def f(a: str, *b: int, **c: float) -> None:
     if typing.TYPE_CHECKING:
+        pass
         # reveal_type(b)
-        reveal_type(c)
+        # reveal_type(c)
     print(a, b, c)
 
 
@@ -28,9 +29,10 @@ def tag(
     return repr((name, content, class_, attrs))
 
 
-f(a='1')
-f('1', 2, 3, x=4, y=5)
+f(a="1")
+f("1", 2, 3, x=4, y=5)
 g(__a=1)
 # h(a=1)
-print(tag('li', 'first', 'second', id='#123'))
-print(tag('li', 'first', 'second', class_='menu', id='#123'))
+h(1)
+print(tag("li", "first", "second", id="#123"))
+print(tag("li", "first", "second", class_="menu", id="#123"))

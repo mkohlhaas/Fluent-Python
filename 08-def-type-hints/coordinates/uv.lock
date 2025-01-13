@@ -1,0 +1,34 @@
+version = 1
+requires-python = ">=3.11"
+
+[[package]]
+name = "coordinates"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "geolib" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "geolib", specifier = ">=1.0.7" }]
+
+[[package]]
+name = "future"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a7/b2/4140c69c6a66432916b26158687e821ba631a4c9273c474343badf84d3ba/future-1.0.0.tar.gz", hash = "sha256:bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05", size = 1228490 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl", hash = "sha256:929292d34f5872e70396626ef385ec22355a1fae8ad29e1a734c3e43f9fbc216", size = 491326 },
+]
+
+[[package]]
+name = "geolib"
+version = "1.0.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "future" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c6/df/0d7bac8eadd310b9ea92b8bdb0b9b879a8567370859bf42e15a6b435ec31/geolib-1.0.7.tar.gz", hash = "sha256:5d617fafbf337d333dc65b893b1893a664ca0383e3e4143932009761cf25962f", size = 4228 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f2/46/e08d831615af9670819432f84f63e30f65fdd4b9976faa093998e0af43ad/geolib-1.0.7-py3-none-any.whl", hash = "sha256:88a6b70dbcae49c51aa417e50d07e871d09e342c6bd060d88a76c921fcb34a75", size = 5538 },
+]

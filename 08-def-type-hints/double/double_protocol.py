@@ -1,11 +1,14 @@
 from typing import TypeVar, Protocol
 
-T = TypeVar('T')  # <1>
+T = TypeVar("T")
+
 
 class Repeatable(Protocol):
-    def __mul__(self: T, other: int) -> T: ...  # <2>
+    def __mul__(self: T, other: int) -> T: ...
 
-RT = TypeVar('RT', bound=Repeatable)  # <3>
 
-def double(n: RT) -> RT:  # <4>
+RT = TypeVar("RT", bound=Repeatable)
+
+
+def double(n: RT) -> RT:
     return n * 2

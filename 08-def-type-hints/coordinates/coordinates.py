@@ -7,11 +7,10 @@
 'wtw3sjq6q'
 """
 
-# tag::GEOHASH[]
-from geolib import geohash as gh  # type: ignore  # <1>
+from geolib import geohash as gh
 
 PRECISION = 9
 
-def geohash(lat_lon: tuple[float, float]) -> str:  # <2>
+
+def geohash(lat_lon: tuple[float, float]) -> str:
     return gh.encode(*lat_lon, PRECISION)
-# end::GEOHASH[]
